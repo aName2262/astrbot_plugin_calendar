@@ -12,7 +12,7 @@ desc: |
   - 所有数据本地缓存，用户查询时零网络延迟，不依赖任何在线 API 的可用性；
   - 缓存不可用时自动回退到 chinese-calendar 离线库，即使 CDN 完全不可用也能正常工作；
   - 支持在 WebUI 配置启用开关、缓存目录、CDN 地址、更新时间与离线回退。
-version: 1.0.0
+version: 1.1.0
 author: aName2262
 repo: https://github.com/aName2262/astrbot_plugin_calendar
 astrbot_version: ">=4.16"
