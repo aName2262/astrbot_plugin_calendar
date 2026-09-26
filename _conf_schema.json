@@ -1,0 +1,56 @@
+{
+  "enable": {
+    "description": "启用插件",
+    "type": "bool",
+    "hint": "是否启用日历插件",
+    "default": true
+  },
+  "cache_dir": {
+    "description": "缓存目录",
+    "type": "string",
+    "hint": "节假日数据本地缓存路径，相对路径基于 AstrBot 的 data 目录；留空则使用默认路径 data/plugin_data/astrbot_plugin_calendar",
+    "default": ""
+  },
+  "cdn_base": {
+    "description": "CDN 地址",
+    "type": "string",
+    "hint": "holiday-cn 数据源 CDN 地址，国内推荐 fastly.jsdelivr.net",
+    "default": "https://fastly.jsdelivr.net/gh/NateScarlet/holiday-cn@master"
+  },
+  "auto_update": {
+    "description": "自动更新",
+    "type": "bool",
+    "hint": "是否每月自动检查并更新节假日数据",
+    "default": true
+  },
+  "update_day": {
+    "description": "更新日",
+    "type": "int",
+    "hint": "每月几号检查数据更新（1-28）",
+    "default": 1
+  },
+  "update_hour": {
+    "description": "更新时刻",
+    "type": "int",
+    "hint": "检查更新的小时（0-23），建议设为凌晨低峰时段",
+    "default": 3
+  },
+  "fallback_enable": {
+    "description": "离线回退",
+    "type": "bool",
+    "hint": "本地缓存不可用时，是否回退到 chinese-calendar 库",
+    "default": true
+  },
+  "festival_enable": {
+    "description": "传统节日数据",
+    "type": "bool",
+    "hint": "启用 ChinaCalendar 传统节日/纪念日日历（cal_festival.ics），提供元宵、七夕、重阳等非法定节日",
+    "default": true
+  },
+  "festival_ics_url": {
+    "description": "传统节日源",
+    "type": "string",
+    "hint": "传统节日 iCal 订阅地址；留空使用默认数据源 https://yangh9.github.io/ChinaCalendar/cal_festival.ics",
+    "default": "https://yangh9.github.io/ChinaCalendar/cal_festival.ics"
+  }
+}

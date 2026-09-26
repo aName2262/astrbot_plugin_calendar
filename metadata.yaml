@@ -1,0 +1,18 @@
+# metadata.yaml
+name: astrbot_plugin_calendar
+display_name: 日历
+short_desc: 自动识别节日、调休及工作日，含传统节日日历，支持本地缓存、每月自动更新与 LLM 自主调用
+desc: |
+  让 bot 自动识别当天节日、调休和工作日状态，也支持查询过去或未来的任意日期。
+
+  - 内置 `/节日`、`/节日查询`、`/下个节日`、`/节日列表`、`/传统节日` 等指令，覆盖今天、指定日期、下一个法定节假日、某月法定安排与某月传统节日；
+  - 同时注册 LLM 工具 `calendar_check_date`、`calendar_next_holiday`、`calendar_month_list`、`calendar_traditional_festival`，大模型可在对话中自主调用，无需用户手动输入指令；
+  - 传统节日/纪念日数据来自 ChinaCalendar 项目的 cal_festival.ics 订阅（https://github.com/YangH9/ChinaCalendar），与法定节假日数据相互独立，同样带 ETag 条请求、本地缓存与离线可用；
+  - 数据源采用 holiday-cn，每月定时发起带 ETag 的条件请求，数据未变更时仅返回 HTTP 304，只有国务院发布新安排才下载完整 JSON，流量消耗极低；
+  - 所有数据本地缓存，用户查询时零网络延迟，不依赖任何在线 API 的可用性；
+  - 缓存不可用时自动回退到 chinese-calendar 离线库，即使 CDN 完全不可用也能正常工作；
+  - 支持在 WebUI 配置启用开关、缓存目录、CDN 地址、更新时间与离线回退。
+version: 1.0.0
+author: aName2262
+repo: https://github.com/aName2262/astrbot_plugin_calendar
+astrbot_version: ">=4.16"
